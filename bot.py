@@ -1,6 +1,7 @@
 import os
-import discord
 import asyncio
+import discord
+from discord.ext import commands
 from dotenv import load_dotenv
 from random import choice
 
@@ -8,7 +9,7 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 quotesList = [
-             'Quer ganhar um caminhão de CIGARRO? Envie CIGARRO para (21) 8837-4423 para concorrer a um caminhão de CIGARRO!',
+             'Quer ganhar um caminhão de CIGARRO? Envie CIGARRO para (69) 4002-8922 para concorrer a um caminhão de CIGARRO!',
              'A estética do cigarro é daora pena q da cancer',
              'Ô gente boa\nÔ gente boa\nEi\nTem cigarro aí?\nCigarro\nTem cigarro aí?',
              'Pois eu gosto muito de cigarro e vô fuma bastante cigarro hmmm hmmm cigarro hmmm',
@@ -22,7 +23,7 @@ quotesList = [
              'Quer um cigarro amigo?',
              'me segurando p n ir comprar cigarro pq n posso fumar mais'
 ]
-bot = commands.Bot(command_prefix = 'cig.')
+bot = commands.Bot(command_prefix = 'c.')
 # bot = discord.Client()
 
 @bot.event
