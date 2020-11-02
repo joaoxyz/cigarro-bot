@@ -23,14 +23,14 @@ quotesList = [
              'Quer um cigarro amigo?',
              'me segurando p n ir comprar cigarro pq n posso fumar mais'
 ]
-bot = commands.Bot(command_prefix = 'c.')
+bot = commands.Bot(command_prefix = '!')
 # bot = discord.Client()
 
 @bot.event
 async def on_ready():
     print(f'{bot.user} has connected to Discord!')
 
-@bot.command(name='frase')
+@bot.command(name='cigarro')
 async def quote(ctx):
     await ctx.send(choice(quotesList))
 
