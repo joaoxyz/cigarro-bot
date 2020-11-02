@@ -2,7 +2,7 @@ import os
 import discord
 import asyncio
 from dotenv import load_dotenv
-from random import randint
+from random import choice
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -22,17 +22,15 @@ quotesList = [
              'Quer um cigarro amigo?',
              'me segurando p n ir comprar cigarro pq n posso fumar mais'
 ]
-bot = discord.Client()
+bot = commands.Bot(command_prefix = 'cig.')
+# bot = discord.Client()
 
 @bot.event
 async def on_ready():
-   print(f'{bot.user} has connected to Discord!')
+    print(f'{bot.user} has connected to Discord!')
 
-@bot.event
-async def on_message(message):
-   print(message.content)
-
-   if message.content == 'cigarro':
-       await message.channel.send(quotesList[randint(0, len(quotesList) - 1)])
+@bot.command(name='frase')
+async def quote(ctx):
+    await ctx.send(choice(quotesList))
 
 bot.run(TOKEN)
