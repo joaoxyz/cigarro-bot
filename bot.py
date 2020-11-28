@@ -8,12 +8,11 @@ from random import choice
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-file = open("quotes.txt")
+file = open('quotes.txt', encoding='utf-8')
 quotesList = file.readlines()
 file.close()
 
 bot = commands.Bot(command_prefix = '!')
-# bot = discord.Client()
 
 @bot.event
 async def on_ready():
