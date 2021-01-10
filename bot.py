@@ -23,4 +23,10 @@ async def on_ready():
 async def quote(ctx):
     await ctx.send(choice(quotesList))
 
+#with open('marlborao.jpg', 'rb') as f:
+@bot.command(name = 'img')
+async def send_image(ctx):
+    #image = discord.File(file = discord.File('marlborao.jpg'))
+    await ctx.send(file = discord.File('marlborao.jpg'))
+
 bot.run(TOKEN)
