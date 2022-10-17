@@ -4,6 +4,7 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 from random import choice
+from keep_alive import keep_alive
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -23,4 +24,5 @@ async def on_ready():
 async def quote(ctx):
     await ctx.send(choice(quotesList))
 
+keep_alive()
 bot.run(TOKEN)
